@@ -1,10 +1,14 @@
 /* Imports */
+import { fetchPosts, getUser, logout } from './fetch-utils.js';
 
 /* Get DOM Elements */
 
 /* State */
 
 /* Events */
+window.addEventListener('load', async () => {
+    console.log(await fetchPosts());
+});
 
 /* Display Functions */
 

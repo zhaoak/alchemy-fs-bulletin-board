@@ -4,6 +4,12 @@ const SUPABASE_KEY =
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+export async function fetchPosts() {
+    const query = client.from('bulletin_board').select('*').order('id').limit(100);
+    const response = await query;
+    return response.data;
+}
+
 export async function submitPost(title, body, contact) {
     return await client
         .from('bulletin_board')
