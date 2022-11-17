@@ -4,6 +4,12 @@ const SUPABASE_KEY =
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+export async function submitPost(title, body, contact) {
+    return await client
+        .from('bulletin_board')
+        .insert([{ title: title, body: body, contact: contact }]);
+}
+
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }

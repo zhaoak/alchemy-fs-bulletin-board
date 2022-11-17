@@ -26,7 +26,6 @@ signUpForm.addEventListener('submit', async (e) => {
     }
 
     const userData = await signUpUser(formData.get('username'), formData.get('password'));
-    console.log(userData);
 
     if (userData) {
         location.replace('../');
