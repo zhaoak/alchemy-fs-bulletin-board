@@ -11,9 +11,8 @@ export async function fetchPosts() {
 }
 
 export async function submitPost(title, body, contact) {
-    return await client
-        .from('bulletin_board')
-        .insert([{ title: title, body: body, contact: contact }]);
+    await client.from('bulletin_board').insert([{ title: title, body: body, contact: contact }]);
+    return (window.location.href = '../');
 }
 
 export function getUser() {
@@ -30,7 +29,11 @@ export async function signInUser(email, password) {
     return response.user;
 }
 
-export async function checkAuth() {}
+
+export async function checkAuth() {
+    if (await getUser()) return;
+    return (window.location.href = '../');
+}
 
 export async function redirectIfLoggedIn() {}
 
