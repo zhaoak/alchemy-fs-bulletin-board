@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Create post</title>
+        <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="./post.js"></script>
+
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
+
+        <!-- css -->
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header>
+            <a href="../">Back</a>
+            <h1>Create post</h1>
+        </header>
+
+        <main>
+            <label for="post"></label>
+            <form class="sign-up" id="post">
+                <input type="text" name="title" placeholder="Post title" />
+                <input type="text" name="body" placeholder="Say something, coward" />
+                <input type="text" name="contact" placeholder="Optional contact info" value="" />
+                <div>
+                    <h3>Use your email as contact?</h3>
+                    <input type="checkbox" name="use-email" />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </body>
+</html>
