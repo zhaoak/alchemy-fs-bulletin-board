@@ -26,8 +26,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
-    width: 100%;
+    gap: 50px;
 
     background-color: var(--header-background);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -100,5 +99,9 @@ form {
 }
 
 #logout-button {
-    margin-left: auto;
+    justify-self: flex-end;
+}
+
+#login-email-disp {
+    color: gray;
 }

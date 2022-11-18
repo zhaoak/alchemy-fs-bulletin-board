@@ -5,12 +5,19 @@ import { renderBoardPost } from './render-utils.js';
 /* Get DOM Elements */
 const board = document.getElementById('bulletin-board');
 const logoutButton = document.getElementById('logout-button');
+const userEmailDisp = document.getElementById('login-email-disp');
 
 /* State */
 let postList = [];
 
 /* Events */
 window.addEventListener('load', async () => {
+    logoutButton.disabled = true;
+    // check if user logged in
+    if (getUser()) {
+        logoutButton.disabled = false;
+        userEmailDisp.textContent = `Logged in as ${getUser().email}`;
+    }
     postList = await fetchPosts();
     displayPosts();
 });
