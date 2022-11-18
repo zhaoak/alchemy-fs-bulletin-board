@@ -29,13 +29,16 @@ export async function signInUser(email, password) {
     return response.user;
 }
 
-
 export async function checkAuth() {
     if (await getUser()) return;
-    return (window.location.href = '../');
+    return (window.location.href = '../login/');
 }
 
-export async function redirectIfLoggedIn() {}
+export async function redirectIfLoggedIn() {
+    if (await getUser()) {
+        return (window.location.href = '../');
+    }
+}
 
 export async function logout() {
     await client.auth.signOut();

@@ -4,6 +4,7 @@ import { renderBoardPost } from './render-utils.js';
 
 /* Get DOM Elements */
 const board = document.getElementById('bulletin-board');
+const logoutButton = document.getElementById('logout-button');
 
 /* State */
 let postList = [];
@@ -12,6 +13,10 @@ let postList = [];
 window.addEventListener('load', async () => {
     postList = await fetchPosts();
     displayPosts();
+});
+
+logoutButton.addEventListener('click', async () => {
+    logout();
 });
 
 /* Display Functions */

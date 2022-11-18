@@ -33,3 +33,6 @@ signUpForm.addEventListener('submit', async (e) => {
         errorMessage.textContent = 'Problem making an account.';
     }
 });
+
+// what it says on the tin
+redirectIfLoggedIn();
